@@ -1,0 +1,5 @@
+{
+  "biome.configurationPath": "./langs/typescript/biome.json",
+  "biome.lsp.bin": "./langs/typescript/node_modules/@biomejs/biome/bin/biome",
+  "biome.requireConfiguration": true
+}
