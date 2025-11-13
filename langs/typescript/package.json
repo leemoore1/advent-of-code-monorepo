@@ -1,0 +1,40 @@
+{
+  "name": "advent-of-code-monorepo",
+  "description": "Advent of Code Mono Repo",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lee Moore",
+    "email": "lee@wickedrebel.dev",
+    "url": "https://www.wickedrebel.dev"
+  },
+  "repository": "https://github.com/leemoore1/advent-of-code-monorepo",
+  "main": "2024/src/welcome.ts",
+  "scripts": {
+    "start": "tsx ./2024/src/welcome.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "format": "biome format",
+    "format:fix": "biome format --write",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "check": "biome check",
+    "check:fix": "pnpm exec biome check --write"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^29.7.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
