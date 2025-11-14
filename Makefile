@@ -24,4 +24,4 @@ run-tests-node:
 	@echo "Running Node tests..."
 	@echo "Year: $(node-year)"
 	@cd $(node-dir) && \
-	pnpm run start
+	pnpm run test
