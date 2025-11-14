@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "ES2016",
     "module": "CommonJS",
-    // "outDir": "./",
     "removeComments": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
