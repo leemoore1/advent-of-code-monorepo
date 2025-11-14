@@ -1,4 +1,4 @@
-import { calculateDistance, getFileContent } from './utils';
+import { calculateDistance, getFileContent } from "./utils";
 
 type SplitArray = {
   listL: Array<number>;
@@ -15,7 +15,7 @@ const splitIntoArrays = (filePath: string): SplitArray => {
   lines.forEach((line: string) => {
     const values: Array<number> = line
       .split(RegExp(/ {3}/))
-      .map((e) => parseInt(e));
+      .map((e) => parseInt(e, 10));
 
     if (values.length !== 2) {
       throw new Error(

@@ -1,7 +1,7 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from "node:fs";
 
 const getFileContent = (filePath: string) => {
-  return readFileSync(filePath, { encoding: 'utf8' });
+  return readFileSync(filePath, { encoding: "utf8" });
 };
 
 const calculateDistance = (a: number, b: number): number => {

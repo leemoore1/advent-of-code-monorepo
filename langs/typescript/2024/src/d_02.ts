@@ -1,16 +1,16 @@
-import { calculateDistance, getFileContent } from './utils';
+import { calculateDistance, getFileContent } from "./utils";
 
 const isSafeReport = (array: Array<number>): boolean => {
-  const MAX_DISTANCE = 3;
+  const MaxDistance = 3;
 
   const asc: boolean = array.slice(1).every((val: number, index: number) => {
     const distance = calculateDistance(val, array[index]);
-    return val > array[index] && distance <= MAX_DISTANCE;
+    return val > array[index] && distance <= MaxDistance;
   });
 
   const desc: boolean = array.slice(1).every((val, index) => {
     const distance = calculateDistance(val, array[index]);
-    return val < array[index] && distance <= MAX_DISTANCE;
+    return val < array[index] && distance <= MaxDistance;
   });
 
   const isSorted: boolean = asc || desc;
@@ -26,7 +26,7 @@ const countSafeReports = (filePath: string, allowError?: boolean): number => {
   lines.forEach((line: string): void => {
     const values: Array<number> = line
       .split(RegExp(/\s/))
-      .map((s: string) => parseInt(s));
+      .map((s: string) => parseInt(s, 10));
 
     const isSafe: boolean = isSafeReport(values);
 
@@ -37,7 +37,7 @@ const countSafeReports = (filePath: string, allowError?: boolean): number => {
         values.forEach(
           (_value: number, index: number, array: Array<number>) => {
             const slice: Array<number> = array.filter(
-              (v: number, i: number) => {
+              (_v: number, i: number) => {
                 return index !== i;
               },
             );

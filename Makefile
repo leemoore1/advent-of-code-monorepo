@@ -1,4 +1,4 @@
-.PHONY: helper help install-deps install-deps-node install-deps-python
+.PHONY: helper help install-deps install-deps-node install-deps-python run-linting-node
 
 help:
 	@echo "Hello, world"
@@ -8,6 +8,7 @@ node-years := 2024
 
 install-deps: install-deps-node install-deps-python
 
+# Install dependencies.
 install-deps-node:
 	@echo "Installing Node dependencies..."
 	@cd $(node-dir) && \
@@ -20,6 +21,13 @@ install-deps-python:
 	source .venv/bin/activate && \
 	pip install -r requirements.txt
 
+# Run linting.
+run-linting-node:
+	@echo "Linting Node files..."
+	@cd $(node-dir) && \
+	pnpm run check:fix
+
+# Run tests.
 run-tests-node:
 	@echo "Running Node tests..."
 	@echo "Year: $(node-year)"

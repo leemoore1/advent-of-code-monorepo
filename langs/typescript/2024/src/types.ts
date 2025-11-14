@@ -3,4 +3,4 @@ type ArrayTestCase = {
   expected: boolean | number;
 };
 
-export { ArrayTestCase };
+export type { ArrayTestCase };
