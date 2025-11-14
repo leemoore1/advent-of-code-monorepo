@@ -3,7 +3,7 @@ import type { Config } from "jest";
 const config: Config = {
   verbose: true,
   testEnvironment: "node",
-  roots: ["<rootDir>/src", "<rootDir>/tests"],
+  // roots: ["<rootDir>/src", "<rootDir>/tests"],
   testMatch: ["**/*.test.ts"],
   transform: {
     "^.+\\.tsx?$": [
@@ -17,7 +17,7 @@ const config: Config = {
     ],
   },
   collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.ts"],
+  collectCoverageFrom: ["**/src/**/*.ts", "lib/*.ts"],
   coverageThreshold: {
     global: {
       branches: 90,
