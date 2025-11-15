@@ -1,17 +1,21 @@
-def helloWorld(name):
+import os
+
+
+def helloWorld(name: str):
     return f"Hello, {name}!"
 
+
 def day1Task1():
-    file = open("test_inputs/2023_12_01.txt")
+    file = open("../../data/samples/2023/d_01_test.txt")
 
     for line in file:
         print(line)
-    
-    chars = line.split()
+        chars = line.split()
 
     # for char in chars:
 
     return ""
+
 
 def isNumber(char):
     try:
