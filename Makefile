@@ -1,35 +1,50 @@
-.PHONY: helper help install-deps install-deps-node install-deps-python run-linting-node
+.PHONY: helper help install-deps
 
 help:
 	@echo "Hello, world"
 
-node-dir := "./langs/typescript"
-node-years := 2024
+python-dir := "./langs/python"
+ts-dir := "./langs/typescript"
 
-install-deps: install-deps-node install-deps-python
+install-deps: setup-ts setup-python
 
-# Install dependencies.
-install-deps-node:
-	@echo "Installing Node dependencies..."
-	@cd $(node-dir) && \
-	pnpm install
+##############
+# TypeScript #
+##############
+.PHONY: setup-ts lint-ts test-ts run-ts
 
-install-deps-python:
-	@echo "Installing Python dependencies..."
-	@cd ./langs/python && \
-	python3 -m venv .venv && \
-	source .venv/bin/activate && \
-	pip install -r requirements.txt
+# Install deps
+setup-ts:
+	@./scripts/setup-ts.sh
 
-# Run linting.
-run-linting-node:
+# Linting
+lint-ts:
 	@echo "Linting Node files..."
-	@cd $(node-dir) && \
+	@cd $(ts-dir) && \
 	pnpm run check:fix
 
-# Run tests.
-run-tests-node:
+# Run tests
+test-ts: setup-ts
 	@echo "Running Node tests..."
-	@echo "Year: $(node-year)"
-	@cd $(node-dir) && \
+	@cd $(ts-dir) && \
 	pnpm run test
+
+# Run main
+run-ts:
+	@echo "Running Node tests..."
+	@cd $(ts-dir) && \
+	pnpm run start
+
+
+##########
+# Python #
+##########
+.PHONY: setup-python test-python
+
+# Install deps
+setup-python:
+	@./scripts/setup-python.sh
+
+# Run tests
+test-python: setup-python
+	@./scripts/test-python.sh
