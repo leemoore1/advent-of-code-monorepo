@@ -1,4 +1,4 @@
-import { getFileContent } from "./utils";
+import { getFileContent } from "../../lib/utils";
 
 const searchForMultiplications = (content: string) => {
   const expression: RegExp = new RegExp(/mul\([0-9]{1,3},[0-9]{1,3}\)/, "g");

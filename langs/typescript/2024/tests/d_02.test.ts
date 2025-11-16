@@ -1,6 +1,6 @@
 import { INPUTS_DIR_2024, SAMPLES_DIR_2024 } from "../../lib/variables";
 import { countSafeReports, isSafeReport } from "../src/d_02";
-import type { ArrayTestCase } from "../src/types";
+import type { ArrayTestCase } from "../../lib/types";
 
 describe("Day 2", () => {
   describe("Calling isSafeReport()...", () => {

@@ -1,7 +1,7 @@
 import { SAMPLES_DIR_2024 } from "../../lib/variables";
 import { getDistance, getSimilarityScore } from "../src/d_01";
-import type { ArrayTestCase } from "../src/types";
-import { calculateDistance } from "../src/utils";
+import type { ArrayTestCase } from "../../lib/types";
+import { calculateDistance } from "../../lib/utils";
 
 describe("Day 1", () => {
   describe("Calling calculateDistance()...", () => {

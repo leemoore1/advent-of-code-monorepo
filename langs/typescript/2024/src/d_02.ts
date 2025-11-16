@@ -1,4 +1,4 @@
-import { calculateDistance, getFileContent } from "./utils";
+import { calculateDistance, getFileContent } from "../../lib/utils";
 
 const isSafeReport = (array: Array<number>): boolean => {
   const MaxDistance = 3;

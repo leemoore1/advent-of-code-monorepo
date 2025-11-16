@@ -1,6 +1,6 @@
 import { SAMPLES_DIR_2024 } from "../../lib/variables";
 import { searchForMultiplications, sumOfMultiplications } from "../src/d_03";
-import { getFileContent } from "../src/utils";
+import { getFileContent } from "../../lib/utils";
 
 describe("Day 3", () => {
   describe("Calling searchForMultiplications()...", () => {

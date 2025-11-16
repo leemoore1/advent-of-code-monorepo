@@ -1,4 +1,4 @@
-import { calculateDistance, getFileContent } from "./utils";
+import { calculateDistance, getFileContent } from "../../lib/utils";
 
 type SplitArray = {
   listL: Array<number>;
