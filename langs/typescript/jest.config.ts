@@ -4,7 +4,7 @@ const config: Config = {
   verbose: true,
   testEnvironment: "node",
   // roots: ["<rootDir>/src", "<rootDir>/tests"],
-  testMatch: ["**/*.test.ts"],
+  testMatch: ["**/__tests__/*.test.ts"],
   transform: {
     "^.+\\.tsx?$": [
       "esbuild-jest",
@@ -17,7 +17,7 @@ const config: Config = {
     ],
   },
   collectCoverage: true,
-  collectCoverageFrom: ["**/src/**/*.ts", "lib/*.ts"],
+  collectCoverageFrom: ["**/src/d_[0-9]{,1}[0-9]{,1}.ts"],
   coverageThreshold: {
     global: {
       branches: 90,
@@ -26,9 +26,6 @@ const config: Config = {
       statements: 90,
     },
   },
-  testPathIgnorePatterns: ["src/welcome.ts", "src/types.ts"],
-  watchPathIgnorePatterns: ["src/welcome.ts", "src/types.ts"],
-  coveragePathIgnorePatterns: ["src/welcome.ts", "src/types.ts"],
 };
 
 export default config;
