@@ -3,8 +3,11 @@
 help:
 	@echo "Hello, world"
 
+YEAR ?= 2024
+
 python-dir := "./langs/python"
 ts-dir := "./langs/typescript"
+
 
 install-deps: setup-ts setup-python
 
@@ -27,7 +30,7 @@ lint-ts:
 test-ts: setup-ts
 	@echo "Running Node tests..."
 	@cd $(ts-dir) && \
-	pnpm run test
+	pnpm run test -- $(YEAR)/
 
 # Run main
 run-ts:
