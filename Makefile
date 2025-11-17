@@ -36,7 +36,7 @@ test-ts: setup-ts
 run-ts:
 	@echo "Running Node tests..."
 	@cd $(ts-dir) && \
-	pnpm run start
+	pnpm run start:$(YEAR)
 
 
 ##########
