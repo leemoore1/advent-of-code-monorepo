@@ -10,9 +10,10 @@
     "url": "https://www.wickedrebel.dev"
   },
   "repository": "https://github.com/leemoore1/advent-of-code-monorepo",
-  "main": "2024/src/welcome.ts",
+  "main": "./2024/src/index.ts",
   "scripts": {
-    "start": "tsx ./2024/src/welcome.ts",
+    "start:2015": "tsx ./2015/src/index.ts",
+    "start:2024": "tsx ./2024/src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "biome format",

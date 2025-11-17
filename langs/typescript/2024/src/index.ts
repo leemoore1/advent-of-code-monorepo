@@ -1,15 +1,17 @@
-import { INPUTS_DIR_2024 } from "../../lib/variables";
+import { INPUTS_DIR } from "../../lib/variables";
 import { getDistance, getSimilarityScore } from "./d_01";
 import { countSafeReports } from "./d_02";
 import { sumOfMultiplications } from "./d_03";
 
-const welcome = (year: number): void => {
+const YEAR: string = "2024";
+
+const main = (year: number): void => {
   console.log(`Welcome to Advent of Code ${year}!`);
   console.log("-------------------------------");
   console.log();
 };
 
-export default welcome;
+export default main;
 
 const showAnswers = (day: number, answers: Array<unknown>): void => {
   const [ans1, ans2] = answers;
@@ -21,27 +23,27 @@ const showAnswers = (day: number, answers: Array<unknown>): void => {
 };
 
 const day1 = (): void => {
-  const input: string = `${INPUTS_DIR_2024}/d_01.txt`;
+  const input: string = `${INPUTS_DIR}/${YEAR}/d_01.txt`;
   const distance = getDistance(input);
   const similarity: number = getSimilarityScore(input);
   showAnswers(1, [distance, similarity]);
 };
 
 const day2 = (): void => {
-  const input: string = `${INPUTS_DIR_2024}/d_02.txt`;
+  const input: string = `${INPUTS_DIR}/${YEAR}/d_02.txt`;
   const safeReportsWithoutErrors: number = countSafeReports(input);
   const safeReportsWithOneError: number = countSafeReports(input, true);
   showAnswers(2, [safeReportsWithoutErrors, safeReportsWithOneError]);
 };
 
 const day3 = (): void => {
-  const input: string = `${INPUTS_DIR_2024}/d_03.txt`;
+  const input: string = `${INPUTS_DIR}/${YEAR}/d_03.txt`;
   const sum: number = sumOfMultiplications(input);
   // const safeReportsWithOneError: number = sumOfMultiplications(input);
   showAnswers(3, [sum, 0]);
 };
 
-welcome(2024);
+main(2024);
 day1();
 day2();
 day3();

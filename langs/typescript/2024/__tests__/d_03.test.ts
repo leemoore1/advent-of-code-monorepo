@@ -1,12 +1,12 @@
-import { SAMPLES_DIR_2024 } from "../../lib/variables";
-import { searchForMultiplications, sumOfMultiplications } from "../src/d_03";
 import { getFileContent } from "../../lib/utils";
+import { SAMPLES_DIR } from "../../lib/variables";
+import { searchForMultiplications, sumOfMultiplications } from "../src/d_03";
 
 describe("Day 3", () => {
   describe("Calling searchForMultiplications()...", () => {
     it("should return an array when passing test data", () => {
       const content: string = getFileContent(
-        `${SAMPLES_DIR_2024}/d_03_test.txt`,
+        `${SAMPLES_DIR}/2024/d_03_test.txt`,
       );
       const received: Array<RegExpExecArray> =
         searchForMultiplications(content);
@@ -17,7 +17,7 @@ describe("Day 3", () => {
 
     it("...of length 4", () => {
       const content: string = getFileContent(
-        `${SAMPLES_DIR_2024}/d_03_test.txt`,
+        `${SAMPLES_DIR}/2024/d_03_test.txt`,
       );
       const received: Array<RegExpExecArray> =
         searchForMultiplications(content);
@@ -29,7 +29,7 @@ describe("Day 3", () => {
   describe("Calling sumOfMultiplications()...", () => {
     it("should return 161, for part one, when passing test data", () => {
       const received = sumOfMultiplications(
-        `${SAMPLES_DIR_2024}/d_03_test.txt`,
+        `${SAMPLES_DIR}/2024/d_03_test.txt`,
       );
       expect(received).toEqual(161);
     });

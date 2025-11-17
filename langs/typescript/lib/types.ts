@@ -1,6 +1,6 @@
-type ArrayTestCase = {
+export type ArrayTestCase = {
   array: Array<number>;
   expected: boolean | number;
 };
 
-export type { ArrayTestCase };
+export type TestSuite = Array<ArrayTestCase>;

@@ -17,7 +17,6 @@ const config: Config = {
     ],
   },
   collectCoverage: true,
-  collectCoverageFrom: ["**/src/d_[0-9]{,1}[0-9]{,1}.ts"],
   coverageThreshold: {
     global: {
       branches: 90,
