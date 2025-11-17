@@ -33,9 +33,17 @@ quick examples:
 
 Run Node.js unit tests:
 
-```shell
-make test-ts
-```
+- For a specific year:
+
+    ```shell
+    make test-ts YEAR=2015
+    ```
+
+- For the default year (usually the latest event):
+
+    ```shell
+    make test-ts
+    ```
 
 Run Node.js main entry point:
 
