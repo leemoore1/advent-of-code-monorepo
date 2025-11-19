@@ -1,6 +1,8 @@
+import { getTaskInput } from "../../lib/getTaskInput";
+import type { Task } from "../../lib/types";
 import { calculateDistance, getFileContent } from "../../lib/utils";
 
-const isSafeReport = (array: Array<number>): boolean => {
+export const isSafeReport = (array: Array<number>): boolean => {
   const MaxDistance = 3;
 
   const asc: boolean = array.slice(1).every((val: number, index: number) => {
@@ -18,10 +20,12 @@ const isSafeReport = (array: Array<number>): boolean => {
   return isSorted;
 };
 
-const countSafeReports = (filePath: string, allowError?: boolean): number => {
-  const content = getFileContent(filePath);
+export const countSafeReports = (
+  input: string,
+  allowError: boolean = false,
+): number => {
   const safeReports: Array<Array<number>> = [];
-  const lines: Array<string> = content.split(RegExp(/\n/));
+  const lines: Array<string> = input.split(RegExp(/\n/));
 
   lines.forEach((line: string): void => {
     const values: Array<number> = line
@@ -55,4 +59,11 @@ const countSafeReports = (filePath: string, allowError?: boolean): number => {
   return safeReports.length;
 };
 
-export { countSafeReports, isSafeReport };
+const day: string = "02";
+const input: string = getTaskInput("2024", day);
+
+export default {
+  day,
+  p1: countSafeReports(input),
+  p2: countSafeReports(input, true),
+} as Task;

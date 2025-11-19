@@ -1,3 +1,5 @@
+import { getTaskInput } from "../../lib/getTaskInput";
+import type { Task } from "../../lib/types";
 import { calculateDistance, getFileContent } from "../../lib/utils";
 
 type SplitArray = {
@@ -5,13 +7,11 @@ type SplitArray = {
   listR: Array<number>;
 };
 
-const splitIntoArrays = (filePath: string): SplitArray => {
-  const content = getFileContent(filePath);
-
+const splitIntoArrays = (input: string): SplitArray => {
   const listL: Array<number> = [];
   const listR: Array<number> = [];
 
-  const lines: Array<string> = content.split(RegExp(/\n/));
+  const lines: Array<string> = input.split(RegExp(/\n/));
   lines.forEach((line: string) => {
     const values: Array<number> = line
       .split(RegExp(/ {3}/))
@@ -33,8 +33,8 @@ const splitIntoArrays = (filePath: string): SplitArray => {
   return { listL, listR };
 };
 
-const getDistance = (filePath: string): number => {
-  const { listL, listR } = splitIntoArrays(filePath);
+export const getDistance = (input: string): number => {
+  const { listL, listR } = splitIntoArrays(input);
 
   let total: number = 0;
 
@@ -47,10 +47,10 @@ const getDistance = (filePath: string): number => {
   return total;
 };
 
-const getSimilarityScore = (filePath: string): number => {
+export const getSimilarityScore = (input: string): number => {
   let score = 0;
 
-  const { listL, listR } = splitIntoArrays(filePath);
+  const { listL, listR } = splitIntoArrays(input);
 
   listL.forEach((value: number) => {
     let count = 0;
@@ -66,4 +66,11 @@ const getSimilarityScore = (filePath: string): number => {
   return score;
 };
 
-export { getDistance, getSimilarityScore };
+const day: string = "01";
+const input: string = getTaskInput("2024", day);
+
+export default {
+  day,
+  p1: getDistance(input),
+  p2: getSimilarityScore(input),
+} as Task;

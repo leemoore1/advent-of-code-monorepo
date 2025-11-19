@@ -1,4 +1,4 @@
-import type { Answers } from "./types";
+import type { Logger, Task } from "./types";
 
 const printGreeting = (year: string): void => {
   console.info(`Welcome to Advent of Code ${year}!`);
@@ -6,24 +6,17 @@ const printGreeting = (year: string): void => {
   console.info();
 };
 
-const printAnswers = (day: number, answers: Answers): void => {
-  const { partOne, partTwo } = answers;
+const printAnswers = (task: Task): void => {
+  const { day, p1, p2 } = task;
 
   console.info(`Day ${day}`);
-  console.info("--------------------");
-  console.info(`Ans. Part #1: ${partOne}`);
-  console.info(`Ans. Part #2: ${partTwo}`);
+  console.info("------");
+  console.info(`Ans. Part #1: ${p1}`);
+  console.info(`Ans. Part #2: ${p2}`);
   console.info();
 };
 
-export type Logger = {
-  printGreeting: (year: string) => void;
-  printAnswers: (day: number, answers: Answers) => void;
-};
-
-const logger = {
+export default {
   printGreeting,
   printAnswers,
-};
-
-export default logger;
+} as Logger;

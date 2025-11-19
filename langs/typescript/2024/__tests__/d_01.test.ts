@@ -1,6 +1,6 @@
 import type { ArrayTestCase } from "../../lib/types";
 import { calculateDistance } from "../../lib/utils";
-import { SAMPLES_DIR } from "../../lib/variables";
+import { samplesDir } from "../../lib/variables";
 import { getDistance, getSimilarityScore } from "../src/d_01";
 
 describe("Day 1", () => {
@@ -26,13 +26,13 @@ describe("Day 1", () => {
   describe("Calling getDistance()...", () => {
     it("should throw an error when provided with bad sample data", async () => {
       expect(async () => {
-        getDistance(`${SAMPLES_DIR}/2024/d_01_test_bad.txt`);
+        getDistance(`${samplesDir}/2024/d_01_test_bad.txt`);
       }).rejects.toThrow(Error);
     });
 
     it("should return 11 when passing test data", () => {
       const expected = 11;
-      const received = getDistance(`${SAMPLES_DIR}/2024/d_01_test.txt`);
+      const received = getDistance(`${samplesDir}/2024/d_01_test.txt`);
 
       expect(received).toEqual(expected);
     });
@@ -41,7 +41,7 @@ describe("Day 1", () => {
   describe("Calling getSimilarityScore()...", () => {
     it("should return 11 when passing test data", () => {
       const expected = 31;
-      const received = getSimilarityScore(`${SAMPLES_DIR}/2024/d_01_test.txt`);
+      const received = getSimilarityScore(`${samplesDir}/2024/d_01_test.txt`);
       expect(received).toEqual(expected);
     });
   });

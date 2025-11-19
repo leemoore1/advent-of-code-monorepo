@@ -1,5 +1,5 @@
 import "@jest/globals";
-import { followDirections, traverse } from "../src/d_01";
+import { followInstructions, traverse } from "../src/d_01";
 
 type Test = {
   input: string;
@@ -35,7 +35,7 @@ describe("01/12/2015", () => {
 
     tests.forEach((test: Test) => {
       it(`should return ${test.expected} when the input is ${test.input}`, () => {
-        const result: number = followDirections(test.input);
+        const result: number = followInstructions(test.input);
         expect(result).toEqual(test.expected);
       });
     });

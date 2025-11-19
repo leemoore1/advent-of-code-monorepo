@@ -1,4 +1,5 @@
-import { getFileContent } from "../../lib/utils";
+import { getTaskInput } from "../../lib/getTaskInput";
+import type { Task } from "../../lib/types";
 
 const searchForMultiplications = (content: string) => {
   const expression: RegExp = new RegExp(/mul\([0-9]{1,3},[0-9]{1,3}\)/, "g");
@@ -7,9 +8,11 @@ const searchForMultiplications = (content: string) => {
   return matches;
 };
 
-const sumOfMultiplications = (filePath: string, _enabled?: boolean): number => {
-  const content: string = getFileContent(filePath);
-  const m = searchForMultiplications(content);
+const sumOfMultiplications = (
+  input: string,
+  enabled: boolean = false,
+): number => {
+  const m = searchForMultiplications(input);
 
   let product: number = 0;
 
@@ -26,4 +29,11 @@ const sumOfMultiplications = (filePath: string, _enabled?: boolean): number => {
   return product;
 };
 
-export { searchForMultiplications, sumOfMultiplications };
+const day: string = "03";
+const input: string = getTaskInput("2024", day);
+
+export default {
+  day,
+  p1: sumOfMultiplications(input),
+  p2: 0,
+} as Task;

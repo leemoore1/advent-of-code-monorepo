@@ -1,5 +1,5 @@
 import type { ArrayTestCase } from "../../lib/types";
-import { INPUTS_DIR, SAMPLES_DIR } from "../../lib/variables";
+import { inputsDir, samplesDir } from "../../lib/variables";
 import { countSafeReports, isSafeReport } from "../src/d_02";
 
 describe("Day 2", () => {
@@ -23,7 +23,7 @@ describe("Day 2", () => {
 
   describe("Calling getSafeReportCount()...", () => {
     it("should return 2 when passing test data", () => {
-      const received = countSafeReports(`${SAMPLES_DIR}/2024/d_02_test.txt`);
+      const received = countSafeReports(`${samplesDir}/2024/d_02_test.txt`);
       expect(received).toEqual(2);
     });
   });
@@ -31,7 +31,7 @@ describe("Day 2", () => {
   describe("Calling getSafeReportCount()...", () => {
     it("should return 4 when passing test data", () => {
       const received = countSafeReports(
-        `${SAMPLES_DIR}/2024/d_02_test.txt`,
+        `${samplesDir}/2024/d_02_test.txt`,
         true,
       );
       expect(received).toEqual(4);
@@ -39,7 +39,7 @@ describe("Day 2", () => {
 
     it("should return 5 when passing extended test data", () => {
       const received = countSafeReports(
-        `${SAMPLES_DIR}/2024/d_02_test_extended.txt`,
+        `${samplesDir}/2024/d_02_test_extended.txt`,
         true,
       );
       expect(received).toEqual(5);
@@ -47,7 +47,7 @@ describe("Day 2", () => {
 
     it("should return 1 when passing test data with repeated values", () => {
       const received = countSafeReports(
-        `${SAMPLES_DIR}/2024/d_02_test_repeating_num.txt`,
+        `${samplesDir}/2024/d_02_test_repeating_num.txt`,
         true,
       );
       expect(received).toEqual(1);
@@ -56,12 +56,12 @@ describe("Day 2", () => {
 
   describe("Calling getSafeReportCount()...", () => {
     it("should return 252 for part one", () => {
-      const received = countSafeReports(`${INPUTS_DIR}/2024/d_02.txt`);
+      const received = countSafeReports(`${inputsDir}/2024/d_02.txt`);
       expect(received).toEqual(252);
     });
 
     it("should return 324 for part two", () => {
-      const received = countSafeReports(`${INPUTS_DIR}/2024/d_02.txt`, true);
+      const received = countSafeReports(`${inputsDir}/2024/d_02.txt`, true);
       expect(received).toEqual(324);
     });
   });
