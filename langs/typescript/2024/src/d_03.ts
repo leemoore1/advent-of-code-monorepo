@@ -1,14 +1,14 @@
 import { getTaskInput } from "../../lib/getTaskInput";
 import type { Task } from "../../lib/types";
 
-const searchForMultiplications = (content: string) => {
+export const searchForMultiplications = (content: string) => {
   const expression: RegExp = new RegExp(/mul\([0-9]{1,3},[0-9]{1,3}\)/, "g");
   const matches = [...content.matchAll(expression)];
 
   return matches;
 };
 
-const sumOfMultiplications = (
+export const sumOfMultiplications = (
   input: string,
   _enabled: boolean = false,
 ): number => {
@@ -29,11 +29,10 @@ const sumOfMultiplications = (
   return product;
 };
 
-const day: string = "03";
-const input: string = getTaskInput("2024", day);
+const input: string = getTaskInput("2024", "03.txt");
 
 export default {
-  day,
+  day: 3,
   p1: sumOfMultiplications(input),
   p2: 0,
 } as Task;

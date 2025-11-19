@@ -1,3 +1,4 @@
+import { getTaskInput } from "../../lib/getTaskInput";
 import type { ArrayTestCase } from "../../lib/types";
 import { inputsDir, samplesDir } from "../../lib/variables";
 import { countSafeReports, isSafeReport } from "../src/d_02";
@@ -23,45 +24,50 @@ describe("Day 2", () => {
 
   describe("Calling getSafeReportCount()...", () => {
     it("should return 2 when passing test data", () => {
-      const received = countSafeReports(`${samplesDir}/2024/d_02_test.txt`);
+      const input: string = getTaskInput("2024", "d_02_test.txt", true);
+      const received = countSafeReports(input);
       expect(received).toEqual(2);
     });
   });
 
   describe("Calling getSafeReportCount()...", () => {
     it("should return 4 when passing test data", () => {
-      const received = countSafeReports(
-        `${samplesDir}/2024/d_02_test.txt`,
-        true,
-      );
+      const input: string = getTaskInput("2024", "d_02_test.txt", true);
+      const received = countSafeReports(input, true);
       expect(received).toEqual(4);
     });
 
     it("should return 5 when passing extended test data", () => {
-      const received = countSafeReports(
-        `${samplesDir}/2024/d_02_test_extended.txt`,
+      const input: string = getTaskInput(
+        "2024",
+        "d_02_test_extended.txt",
         true,
       );
+      const received = countSafeReports(input, true);
       expect(received).toEqual(5);
     });
 
     it("should return 1 when passing test data with repeated values", () => {
-      const received = countSafeReports(
-        `${samplesDir}/2024/d_02_test_repeating_num.txt`,
+      const input: string = getTaskInput(
+        "2024",
+        "d_02_test_repeating_num.txt",
         true,
       );
+      const received = countSafeReports(input, true);
       expect(received).toEqual(1);
     });
   });
 
   describe("Calling getSafeReportCount()...", () => {
     it("should return 252 for part one", () => {
-      const received = countSafeReports(`${inputsDir}/2024/d_02.txt`);
+      const input: string = getTaskInput("2024", "02.txt");
+      const received = countSafeReports(input);
       expect(received).toEqual(252);
     });
 
     it("should return 324 for part two", () => {
-      const received = countSafeReports(`${inputsDir}/2024/d_02.txt`, true);
+      const input: string = getTaskInput("2024", "02.txt");
+      const received = countSafeReports(input, true);
       expect(received).toEqual(324);
     });
   });

@@ -27,11 +27,10 @@ export const followInstructions = (
   return level;
 };
 
-const day: string = "01";
-const input: string = getTaskInput("2015", day);
+const input: string = getTaskInput("2015", "01.txt");
 
 export default {
-  day,
+  day: 1,
   p1: followInstructions(input),
   p2: followInstructions(input, true),
 } as Task;

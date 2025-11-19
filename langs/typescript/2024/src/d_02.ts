@@ -59,11 +59,10 @@ export const countSafeReports = (
   return safeReports.length;
 };
 
-const day: string = "02";
-const input: string = getTaskInput("2024", day);
+const input: string = getTaskInput("2024", "02.txt");
 
 export default {
-  day,
+  day: 2,
   p1: countSafeReports(input),
   p2: countSafeReports(input, true),
 } as Task;

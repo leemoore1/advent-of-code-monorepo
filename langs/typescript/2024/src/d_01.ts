@@ -66,11 +66,10 @@ export const getSimilarityScore = (input: string): number => {
   return score;
 };
 
-const day: string = "01";
-const input: string = getTaskInput("2024", day);
+const input: string = getTaskInput("2024", "01.txt");
 
 export default {
-  day,
+  day: 1,
   p1: getDistance(input),
   p2: getSimilarityScore(input),
 } as Task;

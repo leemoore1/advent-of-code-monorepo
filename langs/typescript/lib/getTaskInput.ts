@@ -1,6 +1,12 @@
 import { getFileContent } from "./utils";
-import { inputsDir } from "./variables";
+import { inputsDir, samplesDir } from "./variables";
 
-export const getTaskInput = (year: string, day: string): string => {
-  return getFileContent(`${inputsDir}/${year}/${day}.txt`);
+export const getTaskInput = (
+  year: string,
+  file: string,
+  samples: boolean = false,
+): string => {
+  return samples
+    ? getFileContent(`${samplesDir}/${year}/${file}`)
+    : getFileContent(`${inputsDir}/${year}/${file}`);
 };

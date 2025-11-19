@@ -4,7 +4,7 @@ export type ArrayTestCase = {
 };
 
 export type Task = {
-  day: string;
+  day: number;
   p1: number;
   p2: number;
 };
@@ -13,12 +13,5 @@ export type Logger = {
   printGreeting: (year: string) => void;
   printAnswers: (answers: Task) => void;
 };
-
-// export type Task = {
-//   input: string;
-//   answers?: Answers;
-// };
-
-// export type Tasks = Array<Task>;
 
 export type TestSuite = Array<ArrayTestCase>;

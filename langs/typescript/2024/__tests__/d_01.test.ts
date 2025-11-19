@@ -1,6 +1,6 @@
+import { getTaskInput } from "../../lib/getTaskInput";
 import type { ArrayTestCase } from "../../lib/types";
 import { calculateDistance } from "../../lib/utils";
-import { samplesDir } from "../../lib/variables";
 import { getDistance, getSimilarityScore } from "../src/d_01";
 
 describe("Day 1", () => {
@@ -25,23 +25,26 @@ describe("Day 1", () => {
 
   describe("Calling getDistance()...", () => {
     it("should throw an error when provided with bad sample data", async () => {
+      const input: string = getTaskInput("2024", "d_01_test_bad.txt", true);
       expect(async () => {
-        getDistance(`${samplesDir}/2024/d_01_test_bad.txt`);
+        getDistance(input);
       }).rejects.toThrow(Error);
     });
 
     it("should return 11 when passing test data", () => {
       const expected = 11;
-      const received = getDistance(`${samplesDir}/2024/d_01_test.txt`);
+      const input: string = getTaskInput("2024", "d_01_test.txt", true);
+      const received = getDistance(input);
 
       expect(received).toEqual(expected);
     });
   });
 
   describe("Calling getSimilarityScore()...", () => {
-    it("should return 11 when passing test data", () => {
+    it("should return 32 when passing test data", () => {
+      const input: string = getTaskInput("2024", "d_01_test.txt", true);
       const expected = 31;
-      const received = getSimilarityScore(`${samplesDir}/2024/d_01_test.txt`);
+      const received = getSimilarityScore(input);
       expect(received).toEqual(expected);
     });
   });
