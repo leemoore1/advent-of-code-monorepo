@@ -10,7 +10,7 @@ const searchForMultiplications = (content: string) => {
 
 const sumOfMultiplications = (
   input: string,
-  enabled: boolean = false,
+  _enabled: boolean = false,
 ): number => {
   const m = searchForMultiplications(input);
 

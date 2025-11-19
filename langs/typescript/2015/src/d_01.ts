@@ -1,5 +1,5 @@
 import { getTaskInput } from "../../lib/getTaskInput";
-import { Task } from "../../lib/types";
+import type { Task } from "../../lib/types";
 
 export const traverse = (char: string) => {
   if (char === "(") return +1;

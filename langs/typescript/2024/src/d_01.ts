@@ -1,6 +1,6 @@
 import { getTaskInput } from "../../lib/getTaskInput";
 import type { Task } from "../../lib/types";
-import { calculateDistance, getFileContent } from "../../lib/utils";
+import { calculateDistance } from "../../lib/utils";
 
 type SplitArray = {
   listL: Array<number>;
