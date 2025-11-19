@@ -30,7 +30,12 @@ lint-ts:
 test-ts: setup-ts
 	@echo "Running Node tests..."
 	@cd $(ts-dir) && \
-	pnpm run test -- $(YEAR)/
+	pnpm run test -- $(YEAR)
+
+test-ts-watch: setup-ts
+	@echo "Running Node tests..."
+	@cd $(ts-dir) && \
+	pnpm run test:watch -- $(YEAR)
 
 # Run main
 run-ts:
