@@ -3,6 +3,7 @@
 help:
 	@echo "Hello, world"
 
+DAY ?= 01
 YEAR ?= 2024
 
 python-dir := "./langs/python"
@@ -21,7 +22,7 @@ setup-ts:
 	@./scripts/setup-ts.sh
 
 # Linting
-lint-ts:
+lint-ts: setup-ts
 	@echo "Linting Node files..."
 	@cd $(ts-dir) && \
 	pnpm run check:fix
@@ -37,8 +38,13 @@ test-ts-watch: setup-ts
 	@cd $(ts-dir) && \
 	pnpm run test:watch -- $(YEAR)
 
+test-ts-watch-day: setup-ts
+	@echo "Running Node tests..."
+	@cd $(ts-dir) && \
+	pnpm run test:watch -- "$(YEAR)/__tests__/d_$(DAY).test.ts"
+
 # Run main
-run-ts:
+run-ts: setup-ts
 	@echo "Running Node tests..."
 	@cd $(ts-dir) && \
 	pnpm run start:$(YEAR)
