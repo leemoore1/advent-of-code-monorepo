@@ -1,6 +1,6 @@
 import { getTaskInput } from "../../lib/getTaskInput";
 import type { ArrayTestCase } from "../../lib/types";
-import { calculateDistance } from "../../lib/utils";
+import { calculateDistance } from "../lib/calculateDistance";
 import { getDistance, getSimilarityScore } from "../src/d_01";
 
 describe("Day 1", () => {
